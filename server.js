@@ -16,7 +16,7 @@ app.use(methodOverride('_method'));
 app.set("view engine", "ejs");
 app.use("/public", express.static(__dirname + "/public")); 
 
-app.use('/class_tracker', trackerController);
+app.use('/tracker', trackerController);
 
 // =======================
 // Listener
@@ -29,17 +29,6 @@ app.use('/class_tracker', trackerController);
 // })
 
 
-
-
-
-////////////////////////////////////////////////////////////////
-//when connecting atlas and env use this
-////////////////////////////////////////////////////////////////
-
-
 app.listen(3000, () => {
     console.log('listening...');
 })
-// app.listen(3000, () => {
-//     console.log('listening...');
-// })

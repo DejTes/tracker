@@ -7,7 +7,7 @@
             <h1 class="display-5 mb-5" id="editTitle">Students Edit Page</h1>
         </div>
         <div class="mainRow">
-            <form action="/class_tracker/tracker/<%=tracker._id%>?_method=PUT" method="POST" class="boxes">
+            <form action="/tracker/" method="POST" class="boxes">
                 <div class="col-8 mb-4">
                     <label for="Name">Name</label>
                     <input name="Name" class="form-control"type="text" value="<%=tracker.Name%>" placeholder="Enter Name">
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="link-edit">
-        <button class="backButton"><a href="/class_tracker/index">Go Back to Index</a></button>
+        <button class="backButton"><a href="/tracker//index">Go Back to Index</a></button>
     </div>
 </body>
 </html>

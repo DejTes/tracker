@@ -21,7 +21,7 @@
                 <div class="container">
                     <div class="box-nav d-flex justify-between">
                         <!-- id="anchor" add below at end -->
-                    <a href="/class_tracker/new" class="border-shadow" id="anchor">
+                    <a href="/tracker/new" class="border-shadow" id="anchor">
                         <span class="text-gradient">Add a new student <i class="fas fa-user"></i></span>
                     </a>
                 </div>
@@ -42,16 +42,16 @@
                             <% trackers.forEach(trackers=> { %>
                             <tr>
                                 <td>
-                                    <a href="/class_tracker/show/<%= trackers._id %>" class="studentName">
+                                    <a href="/tracker/show/<%= trackers._id %>" class="studentName">
                                     <h1><%= trackers.Name %></h1>
                                     </a>
                                 </td>
                                 <td><%= trackers.Fact%></td>
                                 <td class="actions">
-                                    <a href="/class_tracker/edit/<%= trackers._id %>" class="btn border-shadow update">
+                                    <a href="/tracker/edit/<%= trackers._id %>" class="btn border-shadow update">
                                     <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
                                     </a>
-                                    <form action="/class_tracker/tracker/<%= trackers._id %>?_method=DELETE" method="POST">
+                                    <form action="/tracker/tracker/<%= trackers._id %>?_method=DELETE" method="POST">
                                     <!-- <input type="submit" class="btn borderder-shadow update"> -->
                                     <button type="submit" class="text-gradient"><i class="fa-solid fa-trash"></i> </button> 
                                 </form>   
