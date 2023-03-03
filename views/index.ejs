@@ -42,16 +42,16 @@
                             <% trackers.forEach(trackers=> { %>
                             <tr>
                                 <td>
-                                    <a href="/tracker/show/<%= trackers._id %>" class="studentName">
+                                    <a href="/tracker/<%= trackers._id %>" class="studentName">
                                     <h1><%= trackers.Name %></h1>
                                     </a>
                                 </td>
                                 <td><%= trackers.Fact%></td>
                                 <td class="actions">
-                                    <a href="/tracker/edit/<%= trackers._id %>" class="btn border-shadow update">
+                                    <a href="/tracker/<%= trackers._id %>/edit" class="btn border-shadow update">
                                     <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>
                                     </a>
-                                    <form action="/tracker/tracker/<%= trackers._id %>?_method=DELETE" method="POST">
+                                    <form action="/tracker/<%= trackers._id %>?_method=DELETE" method="POST">
                                     <!-- <input type="submit" class="btn borderder-shadow update"> -->
                                     <button type="submit" class="text-gradient"><i class="fa-solid fa-trash"></i> </button> 
                                 </form>   

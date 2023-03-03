@@ -9,7 +9,7 @@ const Tracker = require("../models/trackerSchema");
 // ========================
 // Delete Route
 // ========================
-router.delete("/tracker/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   Tracker.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/tracker/index");
   });
@@ -33,7 +33,7 @@ router.delete("/tracker/:id", (req, res) => {
 // =======================
 // Edit
 // =======================
-router.get("/edit/:id", (req, res) => {
+router.get("/:id/edit", (req, res) => {
   Tracker.findById(req.params.id, (err, foundTracker) => {
     //find the fruit
     res.render(
@@ -45,7 +45,7 @@ router.get("/edit/:id", (req, res) => {
   });
 });
 
-router.put("/tracker/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   Tracker.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -63,7 +63,7 @@ router.put("/tracker/:id", (req, res) => {
 // ========================
 // Show
 // ========================
-router.get("/show/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   Tracker.findById(req.params.id, (error, foundTracker) => {
     if (error) {
       console.log(error);
@@ -78,7 +78,7 @@ router.get("/show/:id", (req, res) => {
 // Index
 // ========================
 
-router.get("/index", (req, res) => {
+router.get("/", (req, res) => {
   Tracker.find({}, (error, allTracker) => {
     res.render("index.ejs", {
       trackers: allTracker,
@@ -96,7 +96,7 @@ router.get("/new", (req, res) => {
 });
 
 
-router.post("/new", (req, res) => {
+router.post("/", (req, res) => {
   Tracker.create(req.body, (error, createdTracker) => {
     res.redirect("/tracker/index");
   });
